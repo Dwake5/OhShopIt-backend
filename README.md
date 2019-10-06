@@ -14,33 +14,23 @@ Basket
 has_many: users  
 has_many: items
 
-Item
+Item  
+belongs_to: basket  
 
-belongs_to: basket
-
-User
-
+User  
 belongs_to :basket
-
-has_many :items, through: :basket
+has_many :items, through: :basket  
 
 ## Steps taken
 
-rails new OhShopIt-backend --database=postgresql (different DB for deploying to heroku for testing)
-
-rake db:create && rake db:migrate 
-
-rails server (s)
-
-generate controllers for each model, delete views
-
-rails generate migration addBasketToTable
-
-rails generate migration addUsersToTable name age:date gender
-
-rails generate migration addItemsToTable name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean
-
-Rectify timestamps
+rails new OhShopIt-backend --database=postgresql (different DB for deploying to heroku for testing)  
+rake db:create && rake db:migrate  
+rails server (s)  
+generate controllers for each model, delete views  
+rails generate migration addBasketToTable  
+rails generate migration addUsersToTable name age:date gender  
+rails generate migration addItemsToTable name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean  
+Rectify timestamps  
 
 
 ## Potential issues to solve
