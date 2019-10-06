@@ -28,7 +28,9 @@ rake db:create && rake db:migrate
 rails server (s)
 generate controllers for each model, delete views
 rails generate migration addBasketToTable
-rails generate migration addUsersToTable name age:integer gender
+rails generate migration addUsersToTable name age:date gender
+rails generate migration addItemsToTable name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean
+Rectify timestamps
 
 
 ## Potential issues to solve
