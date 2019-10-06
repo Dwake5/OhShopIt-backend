@@ -10,10 +10,8 @@ This Readme, is for documenting the backend. I havent written in Ruby for a coup
 
 ## Associations
 
-Basket
-
-has_many: users
-
+Basket__
+has_many: users__
 has_many: items
 
 Item
