@@ -25,14 +25,18 @@ has_many :items, through: :basket
 
 rails new OhShopIt-backend --database=postgresql (different DB for deploying to heroku for testing)  
 rake db:create && rake db:migrate  
-rails server (s)  
+rails server (rails s)  
 generate controllers for each model, delete views  
-rails generate migration addBasketToTable  
-rails generate migration addUsersToTable name age:date gender  
-rails generate migration addItemsToTable name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean  
-Rectify timestamps  
+rails generate model Basket 
+rails generate model Users name dob:date gender  
+rails generate model Items name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean  
+rails db:migrate
 
 
 ## Potential issues to solve
 
-A shared list, I think this will be overcome by assigning an ID in the database to a basket and then adding grouped users to that ID. A basket - has_many: users
+A shared list, I think this will be overcome by assigning an ID in the database to a basket and then adding grouped users to that ID. 
+
+## Notes to Self
+
+Underscore in console (rails c) is useful for targeting the last line.
