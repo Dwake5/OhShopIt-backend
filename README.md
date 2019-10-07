@@ -18,9 +18,10 @@ has_many: users, through: :items
 
 Item  
 belongs_to: basket  
+belongs_to: user
 
 User  
-belongs_to :item
+has_many :items
 
 ## Steps taken
 
@@ -31,7 +32,10 @@ generate controllers for each model, delete views
 rails generate model Basket 
 rails generate model Users name dob:date gender  
 rails generate model Items name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean  
-rails db:migrate
+rails db:migrate  
+Add name to basket (people can title it 'Smith household' for example) - rails g migration addNameToBasket name  
+
+
 
 
 ## Potential issues to solve
@@ -41,3 +45,5 @@ A shared list, I think this will be overcome by assigning an ID in the database 
 ## Notes to Self
 
 Underscore in console (rails c) is useful for targeting the last line.
+
+Use pry for debugging ruby.
