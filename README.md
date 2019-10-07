@@ -10,16 +10,17 @@ This Readme, is for documenting the backend. I havent written in Ruby for a coup
 
 ## Associations
 
+Because a user is tied to an item (to show who added it), items are the joiner class. Essentially user and basket both have many items.
+
 Basket  
-has_many: users  
 has_many: items
+has_many: users, through: :items
 
 Item  
 belongs_to: basket  
 
 User  
-belongs_to :basket
-has_many :items, through: :basket  
+belongs_to :item
 
 ## Steps taken
 
