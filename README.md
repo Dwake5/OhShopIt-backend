@@ -30,7 +30,6 @@ rake db:create && rake db:migrate
 rails server (rails s)  
 generate controllers for each model, delete views  
 rails generate model Basket 
-
 rails generate model Users name dob:date gender  
 rails generate model Items name quantity:integer adult:boolean maleOnly:boolean femaleOnly:boolean  
 rails db:migrate  
